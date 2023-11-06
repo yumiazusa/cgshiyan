@@ -188,12 +188,9 @@
                                 <tr>
                                     <td>
                                         <div class='box box-4'>
-
-                                          
                                             <button class="layui-btn layui-btn-danger layui-btn-sm" onclick="addData(1)">添加</button>    
                                             <button class="layui-btn layui-btn-danger layui-btn-sm" onclick="removeData(1)">删除</button>
-                                            <button  class="layui-btn layui-btn-danger layui-btn-sm" onclick="getData(1)">获取</button>
-                                         
+                                            <button  class="layui-btn layui-btn-danger layui-btn-sm" onclick="getData(1)">获取</button> 
                                         </div>
                                     </td>
                                 </tr>
@@ -338,7 +335,7 @@
 
         //返回首页
         $('#bu6').click(function() {
-            window.location.replace('{{url(' / ')}}');
+            window.location.replace("{{url('/')}}");
         });
 
         $('#bu7').click(function() {
