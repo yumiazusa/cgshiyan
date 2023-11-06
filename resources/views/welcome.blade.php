@@ -5,15 +5,17 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/public/css/layui.css">
-        <title>财务共享沙盘模拟系统</title>
+        <title>财务管理综合实验</title>
 
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                background-color: #636b6f;
+                background:url(../images/111.gif);background-size:cover;
+                background-position:center center;
+                color: #000;
                 font-family: 'Raleway', sans-serif;
-                font-weight: 100;
+                font-weight: 300;
                 height: 100vh;
                 margin: 0;
             }
@@ -43,7 +45,9 @@
             }
 
             .title {
-                font-size: 84px;
+                font-size: 64px;
+                text-shadow: 2px 2px white;
+                font-weight: 400;
             }
 
             .links > a {
@@ -62,6 +66,16 @@
             th{
                 text-align: center;
             }
+            .my-skin .layui-layer-btn a {
+            background-color: #ff5722;
+            border: 1px solid #ff5722;
+            color: #FFF;
+            }
+            .my-skin .layui-layer-title{
+            background-color: #ff5722;
+            border: 1px solid #ff5722;
+            color: #FFF;
+            }
         </style>
     </head>
     <body>
@@ -72,7 +86,11 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   财务共享服务中心<br>沙盘模拟系统
+                   财务管理综合实验
+                   @if($user)
+                   @else
+                   <br>在线实验平台
+                   @endif
                 </div>
                 <!-- <div class="m-b-md">
                     @foreach($entities as $entity)
@@ -89,11 +107,12 @@
 
 
                 @foreach($res as $k=>$v)
-                <th style="text-align: center;"><a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" 
+                <th style="text-align: center;"><a class="layui-btn layui-btn-warm layui-btn-sm" style="text-decoration:none;" 
                     @if ($res[$k]->status === 1)
                     href='<?php echo $res[$k]->url; ?>'
                     @elseif ($res[$k]->status === 0)
-                    href='javascript:void(0);'
+                    href="javascript:void(0)" onclick="noright()"
+                    name="noright"
                     @endif
                     >{{$res[$k]->title}}</a></th>
                     @endforeach
@@ -110,12 +129,12 @@
                 <tr><td  colspan="6"><a href="{{ route('member::logout') }}">退出登录</a></td></tr>
                 </table>
                     @else
-                        <a class="layui-btn layui-btn-fluid layui-btn-normal" style="text-decoration:none;" href="{{ route('member::login.show') }}">登录</a>
+                        <a class="layui-btn layui-btn-fluid layui-btn-warm" style="text-decoration:none; width:50%;" href="{{ route('member::login.show') }}">登录</a>
                         <!-- <a href="{{ route('admin::login.show') }}">后台登录</a> -->
                     @endif
                 </div>
-                <div class="m-b-md">
-                   <p>本沙盘功能仅供经管院财务共享综合实验教学使用，咨询Email：yumiazusa@hotmail.com</p>
+                <div class="m-b-md" style="position:fixed; bottom:5px;right:0;left:0;margin:0 auto;">
+                   <p>本在线实验系统仅供经管院财务管理综合实验教学使用，咨询Email：yumiazusa@hotmail.com</p>
                    <p>版权所有：yumiazusa；&nbsp;备案号：<a style="color:#666" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">滇ICP备2021003909号-1；</a>
 		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=53011402000635" ><img src="/images/beian.png">&nbsp;滇公网安备：53011402000635号；</a>
 		 	建议您使用谷歌Chrome、Firefox浏览器浏览本网站
@@ -123,5 +142,16 @@
                 </div>
             </div>
         </div>
+    <script>
+       function noright(){
+	    layer.alert('暂未获取本实验权限', {
+        title: '检查权限',
+        icon: 4,
+        skin: 'my-skin'
+        })
+    }
+
+    </script>
+     <script src="/layui/layui.all.js"></script>
     </body>
 </html>

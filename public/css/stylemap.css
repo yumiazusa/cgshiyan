@@ -1,0 +1,36 @@
+body{ font-family: Lato,'Open Sans', sans-sarif; font-size: 16px; background-color: #a6c6d6; }
+*{margin: 0; padding: 0; box-sizing: border-box;}
+.container{margin: 0 auto; max-width: 1000px;}
+.row{width: 103%; float: left; margin: 110px -1.5%;}
+
+/*= common css to all effects =*/
+.single-member{width: 100%; float: left; margin: 0px 0px 15px 0px; background-color: #fff; text-align: center; position: relative;}
+.member-image img{max-width: 100%; vertical-align: middle;}
+.social-touch a{display: inline-block; width: 27px; height: 26px; vertical-align: middle; margin: 0 2px; background-image: url(../images/social-icons.png); background-repeat: no-repeat; opacity: 0.7; transition: 0.3s;}
+.social-touch a:hover{opacity: 1; transition: 0.3s;}
+.fb-touch{background-position: 0 0;}
+.tweet-touch{background-position: -35px 0;}
+.linkedin-touch{background-position: -71px 0;}
+.icon-colored .fb-touch{background-position: 0 -27px;}
+.icon-colored .tweet-touch{background-position: -35px -27px;}
+.icon-colored .linkedin-touch{background-position: -71px -27px;}
+/*= common css to all effects end =*/
+
+/*= effect-7 css =*/
+.effect-7{max-height: 100%; min-height: 100%; overflow: hidden;}
+.effect-7 .member-image{position: absolute; bottom: 0; width: 100%; transition: 0.4s; z-index: 1;}
+.effect-7 .member-image img{width: 100%; transition: 0.4s; opacity: 1; height: 100%;}
+.effect-7 .more-info{height: 208px; transition: 0.4s; overflow: hidden; position: relative; background-color: #fff;}
+.effect-7:hover .member-image{bottom: 40%;}
+.effect-7:hover .member-image img{width: 0; height: 0; transition: 0.4s; opacity: 0;}
+/*= effect-7 css end =*/
+
+/*= Media Query 
+=============== */
+@media only screen and (max-width: 980px){
+	.row{width: 100%; margin: 110px 0;}
+	.team-members{text-align: center;}
+	.single-member{float: none; display: inline-block; vertical-align: bottom;}
+}
+/*= Media Query End
+=================== */
