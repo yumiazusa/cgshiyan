@@ -42,7 +42,7 @@
                                     <!-- effect-7 html -->
                                     <div class="single-member effect-7">
                                         <div class="member-image">
-                                            <img src="images/chuchuang.png" alt="Member">
+                                            <img src="images/chuchuang.png" alt="Member" style="height:100%">
                                         </div>
                                         <div class="more-info">
                                             <table class="infotable">

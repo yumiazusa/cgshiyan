@@ -5,7 +5,7 @@ body{ font-family: Lato,'Open Sans', sans-sarif; font-size: 16px; background-col
 
 /*= common css to all effects =*/
 .single-member{width: 100%; float: left; margin: 0px 0px 15px 0px; background-color: #fff; text-align: center; position: relative;}
-.member-image img{max-width: 100%; max-height: 100%; background-repeat:no-repeat; vertical-align: middle;}
+.member-image img{max-width: 100%; background-repeat:no-repeat; vertical-align: middle;}
 .social-touch a{display: inline-block; width: 27px; height: 26px; vertical-align: middle; margin: 0 2px; background-image: url(../images/social-icons.png); background-repeat: no-repeat; opacity: 0.7; transition: 0.3s;}
 .social-touch a:hover{opacity: 1; transition: 0.3s;}
 .fb-touch{background-position: 0 0;}
