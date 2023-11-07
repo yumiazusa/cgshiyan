@@ -374,20 +374,20 @@
                     style = document.createElement("style");
                     style.setAttribute("id", "dragStyle")
                     style.innerHTML = `.dragContainer,.dragArea {  width: 100%;height:100%;box-sizing: border-box;  }
-                                .dragItem { display: block; position: relative; float: left; border: 1px solid #CCC;color: #fff; margin: 6px;border-radius: 4px;box-sizing: border-box;padding: 14px 6px 6px 6px;overflow:hidden;box-shadow: 0 0 4px 2px rgb(0 0 0 / 10%);background: #4cb0c1; }
+                                .dragItem { display: block; position: relative; float: left; border: 1px solid #CCC;color: #fff; margin: 6px;border-radius: 4px;box-sizing: border-box;padding: 14px 6px 6px 6px;overflow:hidden;box-shadow: 0 0 4px 2px rgb(0 0 0 / 10%);}
                                 .dragItem:hover{background: #40c1d7;cursor: pointer;}
                                 .dragItem:active{background:#168fa3;cursor: default;}
                                 .itemRemove {position: absolute;right: 0;top: 0;width: 16px;height: 16px;z-index: 1;text-align: center;line-height: 12px;font-family: cursive;cursor: default;font-size: 14px;}
                                 .itemRemove:hover{color:#f76d6d;}
                                 .itemRemove:active{color:#ff0000;}
                                 .itemContent{text-align: center;font-family: '微软雅黑';height: 100%;overflow: hidden;}
-                                .itemContent>span{font-weight:bold;display:block;padding-top:4px;}
-                                .itemContent>i {display:block;font-size:36px; }`;
+                                .itemContent>span{font-weight:bold;display:block;margin-top:8px;font-size:15px;line-height:16px;border:1px solid whithe;}
+                                .itemContent>i {display:block;font-size:15px; }`;
                     document.querySelector("head").appendChild(style)
                 }
                 style.innerHTML += `${scopeSelector} .dragItem{width: ${opts.itemWidth || 100}px; height:  ${opts.itemHeight || 100}px;}`
                 if (opts.iconField) {
-                    style.innerHTML += `${scopeSelector} .itemContent>i{height:36px;}`
+                    style.innerHTML += `${scopeSelector} .itemContent>i{height:10px;}`
                 }
                 for (let i = 0; i < data.length; i++) {
                     data[i]._index = i;
@@ -407,6 +407,7 @@
          * @returns {object}
          */
         addItem: function (obj, index) {
+            console.log(obj.Class)
             let data = elData(this.drag, "list"),
                 _self = this,
                 opts = this.options,
@@ -430,7 +431,7 @@
                 contentEl = document.createElement('div'),
                 i = document.createElement('i'),
                 txt = document.createElement('span');
-            dragEl.setAttribute('class', 'dragItem');
+            dragEl.setAttribute('class', 'dragItem '+obj.Class);
             dragEl.setAttribute('id', `item_${typeof obj[opts.idField] === 'string' ? obj[opts.idField].trim() : obj[opts.idField]}`);
             txt.innerHTML = obj[opts.textField];
             iconClass && i.setAttribute('class', iconClass);
@@ -565,15 +566,15 @@
             //移除元素
             function removeFn(e) {
                 let item = elData(this.parentNode, 'sender');
-                _self.removeItem(item[opts.idField])
+                _self.removeItem(item[opts.idField])         
                 opts.data = elData(_self.drag, "list")
                 /**
                  * 移除对象
                  *@param {object} sender -目标对象及HTML元素信息
                  *@param {object} e -事件对象
-                 * */
-                opts.onitemremove && eval(opts.onitemremove)(item, _self, this, e);
-                preventDefaultEvent(e);
+                 * */          
+                opts.onitemremove && eval(opts.onitemremove)(item, _self, this, e);        
+                preventDefaultEvent(e);       
                 stopPropagationEvent(e);
             }
 

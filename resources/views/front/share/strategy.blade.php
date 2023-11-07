@@ -16,6 +16,7 @@
     <script type="text/javascript" src="js/jquery.flip.min.js"></script>
     <script type="text/javascript" src="js/jquery-ui.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/stylemap.css">
+    <link rel="stylesheet" type="text/css" href="https://www.jq22.com/jquery/font-awesome.4.6.0.css">
     <script type="text/javascript" src="js/dragsort.js"></script>
     <title>初创企业</title>
 </head>
@@ -42,7 +43,7 @@
                                     <!-- effect-7 html -->
                                     <div class="single-member effect-7">
                                         <div class="member-image">
-                                            <img src="images/chuchuang.png" alt="Member" style="height:100%">
+                                            <img src="images/chuchuang.png" alt="Member">
                                         </div>
                                         <div class="more-info">
                                             <table class="infotable">
@@ -97,7 +98,7 @@
                     <!-- effect-7 html end -->
                     <div class="layui-form-item">
                         <select name="enterquiz" id="enterquiz">
-                            <option value="">请选择适合的企业组织形式</option>
+                            <option value="">选择适合的企业初创组织形式</option>
                             <optgroup label="独资企业">
                                 <option value="guoqi">国有独资企业</option>
                                 <option value="geqi">个人独资企业</option>
@@ -165,7 +166,6 @@
                             </ul>
                         </div>
                     </div>
-                    <!-- <input type="text" id="title" name="title" placeholder="输入共享服务中心名称" autocomplete="off" class="layui-input" value="{{$content['name']}}"> -->
                 </td>
 
             </tr>
@@ -187,15 +187,22 @@
                             <table class="layui-table table4">
                                 <tr>
                                     <td>
+                                        <span style="float:left; color:#ffffff;position:absolute;top:30%;left:2%">企业章程制定要素</span>
                                         <div class='box box-4'>
-                                            <button class="layui-btn layui-btn-danger layui-btn-sm" onclick="addData(1)">添加</button>    
-                                            <button class="layui-btn layui-btn-danger layui-btn-sm" onclick="removeData(1)">删除</button>
-                                            <button  class="layui-btn layui-btn-danger layui-btn-sm" onclick="getData(1)">获取</button> 
+                                            <!-- <button class="layui-btn layui-btn-drog layui-btn-sm" onclick="removeData(1)">删除</button> -->
+                                            <button class="layui-btn layui-btn-drog layui-btn-sm" onclick="addZ('rights')" style="margin-left: 10px;background: #91c53e;">权利</button>
+                                            <button class="layui-btn layui-btn-drog layui-btn-sm" onclick="addZ('duty')" style="margin-right: 10px;background: #1d75bc;">职责</button>
+                                            <button class="layui-btn layui-btn-drog layui-btn-sm" onclick="addZ('termlist')" style="margin-right: 10px;background:#a33848;">条款</button>
+                                            <button class="layui-btn layui-btn-drog layui-btn-sm" onclick="addZ('num')" style="margin-right: 10px;background: #e18678;">数据</button>
+                                            <button class="layui-btn layui-btn-drog layui-btn-sm" onclick="addZ('info')" style="margin-right: 10px;background: #f3b85d;">信息</button>
+                                            <!-- <button class="layui-btn layui-btn-drog layui-btn-sm" onclick="addData(1)">添加</button> -->
+                                            <!-- <input type="text" id="enterdrog" lay-verify="title" autocomplete="off" placeholder="调研企业章程制定要素" class="layui-input"> -->
                                         </div>
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td>   <div id="dragBox1"></div>
+                                    <td id="carddrogbox">
+                                        <div id="dragBox1"></div>
                                     </td>
                                 </tr>
 
@@ -212,31 +219,11 @@
     </tr>
     </tbody>
     </table>
-    <!--  <dl><img src="img/05.jpg" width=90 height=10%></dl> -->
-    <!-- @foreach($data as $k=>$v)
- <dl class="dl {{$data[$k]['kind']}}" id="dll" leftno="{{$data[$k]['left']}}" topno="{{$data[$k]['top']}}" cid="{{$data[$k]['cid']}}" kind="{{$data[$k]['kind']}}" name="{{$data[$k]['name']}}">
-  <div class="card1">
-  </div>
-  <p>{{$data[$k]['name']}}</p>
-</dl>
-@endforeach -->
+
 
     </div>
     <script src="https://fast.cgshiyan.com/js/iframe.js" id="fastgpt-iframe" data-src="https://fast.cgshiyan.com/chat/share?shareId=kldi3t1jc19t7z9x9qee85kz" data-color="#4e83fd"></script>
     <script>
-        $(function() {
-            $('.box-4 dl').each(function() {
-                var left = $(this).attr('leftno');
-                var top = $(this).attr('topno');
-                $(this).dragging({
-                    move: 'both',
-                    randomPosition: false,
-                    left: left,
-                    top: top
-                });
-            });
-        });
-
         //离开保存
         $('#bu1').click(function() {
             var left = new Array;
@@ -370,22 +357,7 @@
                     });
                 }
             });
-
-            // var hightW = window.innerHeight;
-            // var widthW = window.innerWidth;
-            // var left =new Array;
-            // var top =new Array;
-            // var i = 0;
-            // $('.box-4 dl').each(function(){
-            //   var offset = $(this).offset();
-            //   left[i] = (parseFloat(offset.left / widthW)*100).toFixed(2);
-            //   top[i] = (parseFloat(offset.top / hightW)*100).toFixed(2);
-            //   alert(top);
-            //   alert(left);
-            //   i++;
-            // });
         });
-
 
         let data = [],
             opts1 = {
@@ -394,26 +366,34 @@
                 times: 1200,
                 showClose: true,
                 allowDrag: true,
+                // class:'test1',
                 idField: "Id",
                 textField: "Text",
                 iconField: "Icon",
-                onitemclick: "itemclick",
+                // onitemclick: "itemclick",
                 onitemremove: "removeItem",
                 data: []
             }
-        for (i = 0; i < 8; i++) {
-            let id = getGuid();
-            data.push({
-                id: id,
-                name: `${i+1} _ ${id}`,
-                icon: "fa fa-globe"
-            })
-            opts1.data.push({
-                Id: id,
-                Text: `111222`,
-                Icon: "fa fa-drupal"
-            })
-        }
+        let initalData = [
+            [`企业名称`, "fa fa-keyboard-o", "info"],
+            [`经营场所`, "fa fa-keyboard-o", "info"],
+            [`经营年限`, "fa fa-paste", "num"],
+            [`经营范围`, "fa fa-list-alt", "termlist"],
+            [`法定代表人`, "fa fa-legal", "duty"],
+            [`股东权利`, "fa fa-key", "rights"],
+            [`股东职责`, "fa fa-legal", "duty"],
+            [`股权转让`, "fa fa-key", "rights"],
+
+        ]
+        // for (i = 0; i < 8; i++) {
+        //     let id = getGuid();
+        //     opts1.data.push({
+        //         Id: id,
+        //         Text: initalData[i][0],
+        //         Icon: initalData[i][1],
+        //         Class: initalData[i][2],
+        //     })
+        // }
         //原生js用法
 
 
@@ -431,7 +411,7 @@
         }
 
         function removeItem(a, b, c, d) {
-            alert(JSON.stringify(a))
+            // alert(JSON.stringify(a))
         }
 
         function getAllData(n) {
@@ -446,7 +426,7 @@
             alert(JSON.stringify(item))
         }
 
-        function addData(n) {
+        function addData(n, termZ) {
             let id = getGuid(),
                 len, item, arr;
             if (n == 0) {
@@ -459,12 +439,44 @@
                 };
                 sender.addItem(item)
             } else {
-                arr = sender1.getData().map(m => m.Text.substring(0, m.Text.indexOf("_")).trim().substring(4))
-                len = Math.max(...arr) + 1;
-                item = {
-                    Id: id,
-                    Text: `321`,
-                    Icon: "fa fa-drupal"
+                if (termZ) {
+                    arr = sender1.getData().map(m => m.Text.substring(0, m.Text.indexOf("_")).trim().substring(4))
+                    len = Math.max(...arr) + 1;
+                    let ico = '';
+                    switch (n) {
+                        case 'info':
+                            ico = 'fa fa-keyboard-o'
+                            break;
+                        case 'num':
+                            ico = 'fa fa-paste'
+                            break;
+                        case 'termlist':
+                            ico = 'fa fa-list-alt'
+                            break;
+                        case 'duty':
+                            ico = '"fa fa-legal'
+                            break;
+                        case 'rights':
+                            ico = 'fa fa-key'
+                            break;
+                        default:
+                            tit = 'fa fa-keyboard-o'
+                            break;
+                    }
+                    item = {
+                        Id: id,
+                        Text: termZ,
+                        Icon: ico,
+                        Class: n
+                    }
+                } else {
+                    arr = sender1.getData().map(m => m.Text.substring(0, m.Text.indexOf("_")).trim().substring(4))
+                    len = Math.max(...arr) + 1;
+                    item = {
+                        Id: id,
+                        Text: `321`,
+                        Icon: "fa fa-drupal",
+                    }
                 }
                 sender1.addItem(item)
             }
@@ -486,6 +498,37 @@
                     guid += "-";
             }
             return guid.toUpperCase();
+        }
+
+        function addZ(info) {
+            let tit = ''
+            switch (info) {
+                case 'info':
+                    tit = '信息类'
+                    break;
+                case 'num':
+                    tit = '数据类'
+                    break;
+                case 'termlist':
+                    tit = '条款类'
+                    break;
+                case 'duty':
+                    tit = '职责类'
+                    break;
+                case 'duty':
+                    tit = '权益类'
+                    break;
+                default:
+                    tit = '元素'
+                    break;
+            }
+            layer.prompt({
+                title: '添加' + tit + ',并确认',
+                formType: 3
+            }, function(text, index) {
+                addData(info, text)
+                layer.close(index);
+            });
         }
     </script>
     <script src="/layui/layui.all.js"></script>

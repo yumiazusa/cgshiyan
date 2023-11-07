@@ -98,7 +98,7 @@ html, body { height: 100%; background: #efefef;}
 			  border-width: 0px 0px 0px 0px;
 			  border-style: dotted;
 			  border-color: #32546e;
-			  background:#eceded;
+			  background:#5285a1;
 			  padding:0;
  }
 
@@ -110,7 +110,7 @@ html, body { height: 100%; background: #efefef;}
  			  border-width: 0px 0px 0px 0px;
 			  border-style: dotted;
 			  border-color: #32546e;
-			  background:#eaeeef;
+			  background:#350955;
  }
  
  .layui-icon{
@@ -164,15 +164,22 @@ html, body { height: 100%; background: #efefef;}
  }
  .table4 tr td:first-child{
  			  font-size:25px;
- 			  color:#37576f; 
-			  background: #32546e;
+ 			  color:#37576f;  
 }
  .table4 tr td:nth-child(2){
  			  font-size:150%;
  			  color:#37576f;
-			  background:#93dbfb;
  }
 
+ #carddrogbox{
+	background:#e4eaec;
+ }
+
+ .layui-btn-drog {
+	float: right;
+	margin-right: 10px;
+    background-color:#8c544b;
+}
 
  #tdlw{
 	border:3px solid #37576f;
@@ -346,20 +353,55 @@ html, body { height: 100%; background: #efefef;}
 	 height: 64px;
 }
 
+.layui-btn i{
+	color: #ffffff;
+}
+
+#enterdrog{
+	float: right;
+	width: 40%;
+	height: 30px;
+	/* margin-right:3px; */
+}
 
 #bu1{
 	float:right;
-	margin-left:3px;
+	margin-right:3px;
 }
 
 #bu5{
 	float:right;
-	margin-left:3px;
+	margin-right:9px;
 }
 
 #bu6{
 	float:right;
-	margin-left:3px;
+	
 }
 
 .m_map{width:100%;height:100%;position:relative; background:url(../images/diru.png) no-repeat 0 0 ;background-size:contain;}
+
+.info{
+	background: #f3b85d;
+}
+
+.num{
+	background: #e18678;
+}
+
+.termlist{
+	background:#a33848;
+}
+
+.duty{
+	background:#1d75bc;
+}
+
+.rights{
+	background: #91c53e;
+}
+
+.layui-btn-{
+	margin-left: 10px;
+	margin-right:10px;
+}
