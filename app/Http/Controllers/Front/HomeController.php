@@ -69,6 +69,12 @@ class HomeController extends BaseController
         return view('front.share.strategy', ['data'=>$data,'content'=>$content]);
     }
 
+    public function evaluate()
+    {
+       
+        return view('front.share.evaluate');
+    }
+
     public function feeNav()
     {
         $entities = Entity::query()->External()->get();
