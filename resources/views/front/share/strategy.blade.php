@@ -474,7 +474,7 @@
                             ico = 'fa fa-list-alt'
                             break;
                         case 'duty':
-                            ico = '"fa fa-legal'
+                            ico = 'fa fa-legal'
                             break;
                         case 'rights':
                             ico = 'fa fa-key'
