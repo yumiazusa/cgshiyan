@@ -535,7 +535,7 @@
                 case 'duty':
                     tit = '职责类'
                     break;
-                case 'duty':
+                case 'rights':
                     tit = '权益类'
                     break;
                 default:
