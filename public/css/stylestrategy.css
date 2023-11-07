@@ -186,7 +186,78 @@ html, body { height: 100%; background: #efefef;}
 	padding:0px;
 }
 
+.table5{
+	border-collapse:separate;
+	border-spacing:5px;
+	background: #f0f0f0;
+}
 
+.table5 tr td{
+	border: 3px solid #32546e;
+	padding:0px;
+ }
+
+ #swot{
+		max-width: 40%;
+		position:absolute;
+		top:50%;
+		left:50%;
+		transform:translate(-50%,-50%);
+		z-index: 4;
+ }
+ .swot2{
+	max-width: 60px;
+	position:absolute;
+	top:40%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	z-index: 1;
+}
+.swot3{
+	max-width: 60px;
+	position:absolute;
+	top:60%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	z-index: 1;
+}
+ #str{
+	border:0px;
+	background:#98bad4;
+ }
+ #weak{
+	border:0px;
+	background:#d9c490;
+ }
+ #opp{
+	border:0px;
+	background: #c29089;
+ }
+ #thr{
+	border:0px;
+	background: #b7c296;
+ }
+ #st{
+	height: 100%;
+	font-size: 20px;
+	background:#98bad4;
+	z-index: 1;
+ }
+ #we{
+	height: 100%;
+	font-size: 20px;
+	background:#d9c490;
+ }
+ #op{
+	height: 100%;
+	font-size: 20px;
+	background: #c29089;
+ }
+ #th{
+	height: 100%;
+	font-size: 20px;
+	background: #b7c296;
+ }
  #location{
  	width: 30%;
  	height: 50%;

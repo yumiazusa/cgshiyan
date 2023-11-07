@@ -174,7 +174,27 @@
     </table>
     </td>
     <td id="tdgs" rowspan="2">
-
+    <img id="swot" src="images/table.png" alt="Member">
+    <table class="layui-table table5">
+    <tbody>
+                    <tr><td id="str">
+                    <textarea id="st" class="layui-textarea"></textarea>
+                    <img class="swot2" src="images/str.png" alt="Member">
+                    </td>
+                    <td id="weak">
+                    <textarea id="we" class="layui-textarea"></textarea>
+                    <img class="swot2" src="images/weak.png" alt="Member">
+                    </td>
+                    </tr>
+                    <tr><td id="opp">
+                    <textarea id="op" class="layui-textarea"></textarea>
+                    <img class="swot3" src="images/opp.png" alt="Member">
+                    </td>
+                    <td id="thr">
+                    <textarea id="th" class="layui-textarea"></textarea>
+                    <img class="swot3" src="images/thr.png" alt="Member">
+                    </td></tr>
+    </table>
     </td>
     </tr>
     <tr>
@@ -226,138 +246,138 @@
     <script>
         //离开保存
         $('#bu1').click(function() {
-            var left = new Array;
-            var top = new Array;
-            var hightW = window.innerHeight;
-            var widthW = window.innerWidth;
-            var cid = new Array;
-            var kind = new Array;
-            var name = new Array;
-            var title = $('#title').val();
-            var reason = $('#reason').children('textarea').val();
-            var saveurl = $(this).attr('url');
-            var i = 0;
-            $('.box-4 dl').each(function() {
-                var offset = $(this).offset();
-                left[i] = (parseFloat(offset.left / widthW) * 100).toFixed(2);
-                top[i] = (parseFloat(offset.top / hightW) * 100).toFixed(2);
-                cid[i] = $(this).attr('cid');
-                kind[i] = $(this).attr('kind');
-                name[i] = $(this).attr('name');
-                i++;
-            });
-            $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: saveurl,
-                data: {
-                    'cid': cid,
-                    'kind': kind,
-                    'name': name,
-                    'top': top,
-                    'left': left,
-                    'title': title,
-                    'reason': reason
-                },
-                beforeSend: function() {
-                    layer.load();
-                },
-                //请求成功
-                success: function(result) {
-                    layer.close();
-                    layer.msg(result.msg, {
-                        icon: result.code
-                    }, function() {
-                        if (result.reload) {
-                            location.reload();
-                        }
-                    });
-                },
-                //请求失败，包含具体的错误信息
-                error: function(e) {
-                    layer.msg(e.msg, {
-                        icon: e.code
-                    }, function() {
-                        if (e.reload) {
-                            location.reload();
-                        }
-                    });
-                }
-            });
+            // var left = new Array;
+            // var top = new Array;
+            // var hightW = window.innerHeight;
+            // var widthW = window.innerWidth;
+            // var cid = new Array;
+            // var kind = new Array;
+            // var name = new Array;
+            // var title = $('#title').val();
+            // var reason = $('#reason').children('textarea').val();
+            // var saveurl = $(this).attr('url');
+            // var i = 0;
+            // $('.box-4 dl').each(function() {
+            //     var offset = $(this).offset();
+            //     left[i] = (parseFloat(offset.left / widthW) * 100).toFixed(2);
+            //     top[i] = (parseFloat(offset.top / hightW) * 100).toFixed(2);
+            //     cid[i] = $(this).attr('cid');
+            //     kind[i] = $(this).attr('kind');
+            //     name[i] = $(this).attr('name');
+            //     i++;
+            // });
+            // $.ajax({
+            //     type: "POST",
+            //     dataType: "json",
+            //     url: saveurl,
+            //     data: {
+            //         'cid': cid,
+            //         'kind': kind,
+            //         'name': name,
+            //         'top': top,
+            //         'left': left,
+            //         'title': title,
+            //         'reason': reason
+            //     },
+            //     beforeSend: function() {
+            //         layer.load();
+            //     },
+            //     //请求成功
+            //     success: function(result) {
+            //         layer.close();
+            //         layer.msg(result.msg, {
+            //             icon: result.code
+            //         }, function() {
+            //             if (result.reload) {
+            //                 location.reload();
+            //             }
+            //         });
+            //     },
+            //     //请求失败，包含具体的错误信息
+            //     error: function(e) {
+            //         layer.msg(e.msg, {
+            //             icon: e.code
+            //         }, function() {
+            //             if (e.reload) {
+            //                 location.reload();
+            //             }
+            //         });
+            //     }
+            // });
         });
-        //重置
-        $('#bu5').click(function() {
-            var reurl = $(this).attr('url');
-            $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: reurl,
-                data: "username=chen&nickname=alien",
-                beforeSend: function() {
-                    layer.load();
-                },
-                //请求成功
-                success: function(result) {
-                    layer.close();
-                    layer.msg(result.msg, {
-                        icon: result.code
-                    }, function() {
-                        if (result.reload) {
-                            location.reload();
-                        }
-                    });
-                },
-                //请求失败，包含具体的错误信息
-                error: function(e) {
-                    layer.msg(e.msg, {
-                        icon: e.code
-                    }, function() {
-                        if (e.reload) {
-                            location.reload();
-                        }
-                    });
-                }
-            });
-        });
+        // //重置
+        // $('#bu5').click(function() {
+        //     var reurl = $(this).attr('url');
+        //     $.ajax({
+        //         type: "POST",
+        //         dataType: "json",
+        //         url: reurl,
+        //         data: "username=chen&nickname=alien",
+        //         beforeSend: function() {
+        //             layer.load();
+        //         },
+        //         //请求成功
+        //         success: function(result) {
+        //             layer.close();
+        //             layer.msg(result.msg, {
+        //                 icon: result.code
+        //             }, function() {
+        //                 if (result.reload) {
+        //                     location.reload();
+        //                 }
+        //             });
+        //         },
+        //         //请求失败，包含具体的错误信息
+        //         error: function(e) {
+        //             layer.msg(e.msg, {
+        //                 icon: e.code
+        //             }, function() {
+        //                 if (e.reload) {
+        //                     location.reload();
+        //                 }
+        //             });
+        //         }
+        //     });
+        // });
 
         //返回首页
         $('#bu6').click(function() {
             window.location.replace("{{url('/')}}");
         });
 
-        $('#bu7').click(function() {
-            var reurl = $(this).attr('url');
-            $.ajax({
-                type: "POST",
-                dataType: "json",
-                url: reurl,
-                data: "username=chen&nickname=alien",
-                beforeSend: function() {
-                    layer.load();
-                },
-                //请求成功
-                success: function(result) {
-                    layer.close();
-                    layer.msg(result.msg, {
-                        icon: result.code
-                    }, function() {
-                        if (result.reload) {
-                            location.reload();
-                        }
-                    });
-                },
-                //请求失败，包含具体的错误信息
-                error: function(e) {
-                    layer.msg(e.msg, {
-                        icon: e.code
-                    }, function() {
-                        if (e.reload) {
-                            location.reload();
-                        }
-                    });
-                }
-            });
-        });
+        // $('#bu7').click(function() {
+        //     var reurl = $(this).attr('url');
+        //     $.ajax({
+        //         type: "POST",
+        //         dataType: "json",
+        //         url: reurl,
+        //         data: "username=chen&nickname=alien",
+        //         beforeSend: function() {
+        //             layer.load();
+        //         },
+        //         //请求成功
+        //         success: function(result) {
+        //             layer.close();
+        //             layer.msg(result.msg, {
+        //                 icon: result.code
+        //             }, function() {
+        //                 if (result.reload) {
+        //                     location.reload();
+        //                 }
+        //             });
+        //         },
+        //         //请求失败，包含具体的错误信息
+        //         error: function(e) {
+        //             layer.msg(e.msg, {
+        //                 icon: e.code
+        //             }, function() {
+        //                 if (e.reload) {
+        //                     location.reload();
+        //                 }
+        //             });
+        //         }
+        //     });
+        // });
 
         let data = [],
             opts1 = {
