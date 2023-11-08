@@ -17,11 +17,11 @@
 
 <body>
 <div style="width:100%; height:50px; margin:center; background:black;">能力数据板</div>
-<div id="main3" style="position:absolute;top:5%;left:0%;width:400px;height:255px;"></div>
+<div id="main3" style="position:absolute;top:2%;left:0%;width:400px;height:255px;"></div>
 <div style="display:flex;">
 <div id="main" style="margin:60px auto;width:500px;height:720px;;"></div>
 </div>
-<div id="main2" style="position:absolute;top:37%;left:23%;width:210px;height:300px;transform: rotate(38deg);"></div>
+<div id="main2" style="position:absolute;top:35%;left:23%;width:210px;height:300px;transform: rotate(38deg);"></div>
 <script type="text/javascript">
   var myChart = echarts.init(document.getElementById('main'));
 </script>
