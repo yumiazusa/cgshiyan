@@ -242,7 +242,7 @@
 
 
     </div>
-    <script src="https://fast.cgshiyan.com/js/iframe.js" id="fastgpt-iframe" data-src="https://fast.cgshiyan.com/chat/share?shareId=kldi3t1jc19t7z9x9qee85kz" data-color="#4e83fd"></script>
+    <script src="https://fast.cgshiyan.com/js/iframe.js" id="fastgpt-iframe" data-src="https://fast.cgshiyan.com/chat/share?shareId=yud5czplrwjifcpm4us2x98j" data-color="#4e83fd"></script>
     <script>
         //离开保存
         $('#bu1').click(function() {
