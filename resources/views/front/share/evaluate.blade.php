@@ -21,8 +21,8 @@
 <div style="display:flex;">
 <div id="main" style="margin:60px auto;width:500px;height:720px;;"></div>
 </div>
-<div id="main2" style="position:absolute;top:44%;left:23%;width:210px;height:300px;transform: rotate(38deg);"></div>
-<div style="position:absolute;top:90%;left:-3%">
+<div id="main2" style="position:absolute;top:50%;left:22%;width:210px;height:300px;transform: rotate(38deg);"></div>
+<div style="position:absolute;top:100%;left:-3%">
 <img src="images/fen.png" style="width:100%" alt="评分"></div>
 <script type="text/javascript">
   var myChart = echarts.init(document.getElementById('main'));
