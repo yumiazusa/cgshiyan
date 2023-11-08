@@ -16,7 +16,8 @@
 </head>
 
 <body>
-<div id="main3" style="position:absolute;top:0%;left:0%;width:400px;height:255px;"></div>
+<div style="width:100%; height:50px; margin:center; background:black;">能力数据板</div>
+<div id="main3" style="position:absolute;top:5%;left:0%;width:400px;height:255px;"></div>
 <div style="display:flex;">
 <div id="main" style="margin:60px auto;width:500px;height:720px;;"></div>
 </div>
@@ -117,7 +118,9 @@ option = {
       type: 'shadow'
     }
   },
-//   legend: {},
+//   legend: {
+
+//   },
   grid: {
     left: '3%',
     right: '4%',
@@ -130,18 +133,18 @@ option = {
   },
   yAxis: {
     type: 'category',
-    data: ['Brazil', 'Indonesia', 'USA', 'India', 'China', 'World']
+    data: ['知识运用', '技能操作', '思考空间', '创新思维', '团队合作', '个性展现']
   },
   series: [
     {
-      name: '2011',
+      name: '实验一',
       type: 'bar',
-      data: [18203, 23489, 29034, 104970, 131744, 630230]
+      data: [40000, 28000, 18000, 34000, 50000, 16000]
     },
     {
-      name: '2012',
+      name: '实验二',
       type: 'bar',
-      data: [19325, 23438, 31000, 121594, 134141, 681807]
+      data: [42000, 30000, 20000, 35000, 50000, 18000]
     }
   ]
 };
