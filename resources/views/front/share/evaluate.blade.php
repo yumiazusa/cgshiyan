@@ -26,7 +26,7 @@
 <img src="images/fen.png" style="width:100%" alt="评分"></div>
 <div class="m-b-md" style=" bottom:5px;right:0;left:0;margin:0 auto;">
                    <p>本在线实验系统仅供经管院财务管理综合实验教学使用，咨询Email：yumiazusa@hotmail.com</p>
-                   <p>版权所有：yumiazusa；&nbsp;备案号：<a style="color:#666" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">滇ICP备2021003909号-1；</a>
+                   <p>版权所有：yumiazusa；&nbsp;备案号：<a style="color:#666" target="_blank" rel="noopener" href="http://beian.miit.gov.cn/">滇ICP备2021003909号-3</a>
 		 		<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=53011402000635" ><img src="/images/beian.png">&nbsp;滇公网安备：53011402000635号；</a>
 		 	建议您使用谷歌Chrome、Firefox浏览器浏览本网站
                 </p>
