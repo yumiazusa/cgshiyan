@@ -41,7 +41,7 @@ option = {
     {
       name: 'Access From',
       type: 'pie',
-      radius: ['50%', '70%'],
+      radius: ['50%', '90%'],
       avoidLabelOverlap: false,
       label: {
         show: false,
