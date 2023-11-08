@@ -16,9 +16,9 @@
 <body>
 <div id="main3" style="position:absolute;top:0%;left:0%;width:400px;height:255px;"></div>
 <div style="display:flex;">
-<div id="main" style="margin:60px auto;width:500px;height:720px;"></div>
+<div id="main" style="margin:60px auto;width:500px;height:720px;;"></div>
 </div>
-<div id="main2" style="position:absolute;top:37%;left:23%;width:205px;height:300px;"></div>
+<div id="main2" style="position:absolute;top:37%;left:23%;width:205px;height:300px;transform: rotate(35deg);"></div>
 <script type="text/javascript">
   var myChart = echarts.init(document.getElementById('main'));
 </script>
