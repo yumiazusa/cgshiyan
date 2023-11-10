@@ -50,7 +50,7 @@ class HomeController extends BaseController
         if(!$user){
             return view('welcome', compact('entities'));
         }else{
-            $res = DB::table('card5')->where('parent_id','20201013')->first();
+            $res = DB::table('card5')->where('parent_id','1')->first();
             $data=unserialize($res->carddata);
             shuffle($data);
             return view('front.share.plan', ['data'=>$data]);
