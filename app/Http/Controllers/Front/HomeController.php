@@ -49,11 +49,13 @@ class HomeController extends BaseController
         $user = Auth::guard('member')->user();
         if(!$user){
             return view('welcome', compact('entities'));
+        }else{
+            $res = DB::table('card5')->where('parent_id','20201013')->first();
+            $data=unserialize($res->carddata);
+            shuffle($data);
+            return view('front.share.plan', ['data'=>$data]);
         }
-        $res = DB::table('card5')->where('parent_id',$user->id)->first();
-        $data=unserialize($res->carddata);
-        shuffle($data);
-        return view('front.share.plan', ['data'=>$data]);
+       
     }
 
     public function strategy()
