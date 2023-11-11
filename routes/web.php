@@ -3,7 +3,7 @@
  * @Author: yumiazusa yumiazusa@hotmail.com
  * @Date: 2023-09-30 00:09:29
  * @LastEditors: yumiazusa yumiazusa@hotmail.com
- * @LastEditTime: 2023-11-08 00:21:43
+ * @LastEditTime: 2023-11-12 00:22:54
  * @FilePath: /datamaker/Users/ligen/Desktop/www/cgshiyan/routes/web.php
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
  */
@@ -46,6 +46,7 @@ Route::group(
         Route::get('plan','HomeController@plan')->name('plan');
         Route::get('strategy','HomeController@strategy')->name('strategy');
         Route::get('evaluate','HomeController@evaluate')->name('evaluate');
+        Route::get('search', 'HomeController@search')->name('search');
         Route::get('feenav','HomeController@feeNav')->name('feenav');
         Route::get('savecard','HomeController@saveCard')->name('savecard');
         Route::post('renav','HomeController@renav')->name('renav');
