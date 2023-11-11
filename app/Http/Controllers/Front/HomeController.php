@@ -6,7 +6,7 @@ use App\Model\Admin\Entity;
 use App\Repository\Admin\ContentRepository;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Http;
+use GuzzleHttp\Client;
 
 use Auth;
 
@@ -70,9 +70,10 @@ class HomeController extends BaseController
         $url = "https://www.googleapis.com/customsearch/v1?q=$query&key=$apiKey&cx=$cx";
 
         try {
-            $response = Http::get($url);
+            $client = new Client();
+            $response = $client->get($url);
 
-            $data = $response->json();
+            $data = json_decode($response->getBody(), true);
 
             // 处理搜索结果，根据实际需要自定义
 
