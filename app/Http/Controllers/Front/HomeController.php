@@ -89,7 +89,7 @@ class HomeController extends BaseController
         $query = '堕落天使';
         $jsonQuery = json_encode(['query' => $query]);
         // 在此替换为你自己的百度开放云 API 密钥
-        $apiKey = '26450fe2ea824ca6';
+        $apiKey = '9T3Fl5NobDvI3AkmGn2p23n1';
 
         $url = "https://aip.baidubce.com/rpc/2.0/smartapp/fastsearch?query=$jsonQuery&apikey=$apiKey";
 
