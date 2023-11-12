@@ -58,40 +58,16 @@ class HomeController extends BaseController
         return view('front.share.plan', ['data'=>$data]);
     }
 
-    // public function search(Request $request)
-    // {
-    //     // $query = $request->input('query');
-    //     $query = '堕落天使';
-
-    //     // 在此替换为你自己的 Google API 密钥和自定义搜索引擎 ID
-    //     $apiKey = 'AIzaSyC2kuJuntFJ04huW6xmpMGc7P1lh2vLO_Q';
-    //     $cx = 'd3f300dfce4764917';
-
-    //     $url = "https://www.googleapis.com/customsearch/v1?q=$query&key=$apiKey&cx=$cx";
-
-    //     try {
-    //         $client = new Client();
-    //         $response = $client->get($url);
-
-    //         $data = json_decode($response->getBody(), true);
-
-    //         // 处理搜索结果，根据实际需要自定义
-
-    //         return response()->json($data);
-    //     } catch (\Exception $e) {
-    //         return response()->json(['error' => $e->getMessage()], 500);
-    //     }
-    // }
-
     public function search(Request $request)
     {
-        // $query = $request->input('query');
-        $query = '堕落天使';
-        $jsonQuery = json_encode(['query' => $query]);
-        // 在此替换为你自己的百度开放云 API 密钥
-        $apiKey = '9T3Fl5NobDvI3AkmGn2p23n1';
+        $query = $request->input('query');
+        // $query = '堕落天使';
 
-        $url = "https://aip.baidubce.com/rpc/2.0/smartapp/fastsearch?query=$jsonQuery&apikey=$apiKey";
+        // 在此替换为你自己的 Google API 密钥和自定义搜索引擎 ID
+        $apiKey = 'AIzaSyC2kuJuntFJ04huW6xmpMGc7P1lh2vLO_Q';
+        $cx = 'd3f300dfce4764917';
+
+        $url = "https://www.googleapis.com/customsearch/v1?q=$query&key=$apiKey&cx=$cx";
 
         try {
             $client = new Client();
@@ -106,6 +82,31 @@ class HomeController extends BaseController
             return response()->json(['error' => $e->getMessage()], 500);
         }
     }
+
+    // public function search(Request $request)
+    // {
+    //     $query = $request->input('query');
+     
+    //     $jsonQuery = json_encode(['query' => $query]);
+    //     // dd($jsonQuery);
+    //     // 在此替换为你自己的百度开放云 API 密钥
+    //     $apiKey = '9T3Fl5NobDvI3AkmGn2p23n1';
+
+    //     $url = "https://aip.baidubce.com/rpc/2.0/smartapp/fastsearch?query=$jsonQuery&apikey=$apiKey";
+
+    //     try {
+    //         $client = new Client();
+    //         $response = $client->get($url);
+
+    //         $data = json_decode($response->getBody(), true);
+
+    //         // 处理搜索结果，根据实际需要自定义
+
+    //         return response()->json($data);
+    //     } catch (\Exception $e) {
+    //         return response()->json(['error' => $e->getMessage()], 500);
+    //     }
+    // }
 
     public function strategy()
     {
