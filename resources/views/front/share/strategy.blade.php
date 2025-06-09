@@ -242,7 +242,7 @@
 
 
     </div>
-    <script src="http://www.sandboxie.club:3000/js/iframe.js" id="fastgpt-iframe" data-src="http://www.sandboxie.club:3000/chat/share?shareId=tpaqvptxakgvy28g9saj4oic" data-color="#4e83fd"></script>
+    <script src="https://fast.cgshiyan.com/js/iframe.js" id="fastgpt-iframe" data-src="https://fast.cgshiyan.com/chat/share?shareId=tpaqvptxakgvy28g9saj4oic" data-color="#4e83fd"></script>
     <script>
         
         //离开保存
